@@ -1,0 +1,21 @@
+ON BLOQUE L'EXTREME GAUCHE — VERSION DE TRAVAIL
+
+CONTENU
+- index.html : site responsive, recherche et catégories, bouton BLOQUÉ, compte local,
+  messages de respect des forces publiques et de solidarité avec les commerçants.
+- supabase_schema.sql : schéma initial pour une future base collective.
+- LISEZ-MOI.txt : ces instructions.
+
+IMPORTANT
+1. Le bouton BLOQUÉ enregistre actuellement le choix dans le navigateur utilisé.
+2. Le compteur collectif est indiqué « À connecter » : il n'est PAS activé dans cette version.
+3. Les audiences ne sont pas inventées : chaque profil affiche « À relever par réseau ».
+   Pour afficher des chiffres fiables, il faut relever le nombre d'abonnés pour chaque
+   plateforme et dater la consultation.
+4. Le répertoire est un point de départ et ne prétend pas être exhaustif. Les fonctions
+   politiques et affiliations doivent être revérifiées avant publication.
+5. Pour un compteur commun, crée un projet Supabase, exécute le SQL, puis ajoute une API
+   serveur/Edge Function avec anti-doublons, limitation de débit et CAPTCHA. Ne publie jamais
+   de secret d'administration dans index.html.
+6. Hébergement possible sur Vercel ou Netlify avec l'offre gratuite, selon leurs conditions
+   et limites en vigueur. Le site n'est pas publié en ligne par ce paquet.
