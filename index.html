@@ -1,170 +1,217 @@
+
 <!doctype html>
 <html lang="fr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Une campagne citoyenne de choix personnel sur les réseaux sociaux. Respect des forces publiques et solidarité avec les commerçants victimes de pillages.">
+<meta name="description" content="Une campagne citoyenne de choix personnel sur les réseaux sociaux.">
 <title>On bloque l’extrême gauche | Campagne citoyenne</title>
 <style>
-:root{--ink:#141414;--paper:#f7f6f2;--red:#d92732;--red2:#a9131d;--muted:#686868;--line:#dedbd5;--green:#18794e;--white:#fff}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.5}
-a{color:inherit}.wrap{width:min(1120px,92%);margin:auto}.top{background:#111;color:#fff;font-size:.82rem;padding:8px 0}.top .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-header{background:#fff;border-bottom:1px solid var(--line)}.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:17px 0}.brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:-.04em}.brandmark{display:grid;place-items:center;width:42px;height:42px;background:var(--red);color:#fff;border-radius:9px;font-weight:1000;font-size:1.3rem}.brand span:last-child{font-size:1.04rem;line-height:1.05}.navlinks{display:flex;gap:20px;align-items:center;font-size:.9rem;font-weight:700}.navlinks a{text-decoration:none}.navlinks a:hover{color:var(--red)}
-.hero{background:var(--red);color:#fff;padding:64px 0 56px;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;right:-100px;top:-130px;width:430px;height:430px;border:65px solid rgba(255,255,255,.09);border-radius:50%}.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.76rem;font-weight:900}.hero h1{font-size:clamp(2.6rem,7vw,5.8rem);line-height:.92;letter-spacing:-.065em;text-transform:uppercase;margin:18px 0;max-width:820px}.hero p{max-width:650px;font-size:1.13rem;color:#fff8f8}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.btn{display:inline-flex;justify-content:center;align-items:center;border:0;border-radius:7px;padding:12px 18px;font-weight:850;text-decoration:none;cursor:pointer;font-size:.95rem}.btn-white{background:#fff;color:#111}.btn-dark{background:#111;color:#fff}.btn-red{background:var(--red);color:#fff}.btn-outline{border:1px solid var(--line);background:#fff;color:#111}.btn:hover{filter:brightness(.94)}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:-22px;position:relative;z-index:2}.stat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px;box-shadow:0 8px 25px #00000008}.stat strong{display:block;font-size:clamp(1.6rem,4vw,2.4rem);line-height:1.1;letter-spacing:-.05em}.stat span{font-size:.86rem;color:var(--muted)}.stat .label{font-size:.72rem;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:var(--red);margin-bottom:8px}
-section{padding:54px 0}.section-head{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:22px}.section-head h2{font-size:clamp(1.8rem,4vw,3rem);letter-spacing:-.05em;line-height:1;margin:0}.section-head p{max-width:470px;color:var(--muted);margin:0}.notice{background:#fff;border:1px solid var(--line);border-left:5px solid var(--red);padding:14px 16px;border-radius:8px;color:#343434;font-size:.9rem;margin:18px 0}
-.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}.toolbar input,.toolbar select{font:inherit;border:1px solid #cfcac2;border-radius:8px;padding:12px 13px;background:#fff;min-width:190px}.toolbar input{flex:1}.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.person{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center}.person h3{font-size:1.02rem;margin:0 0 3px}.person .role{font-size:.82rem;color:var(--muted)}.person .followers{font-size:.78rem;color:#4d4d4d;margin-top:6px}.person .actions{display:flex;align-items:center;gap:8px;flex-direction:column}.mark{background:var(--red);color:#fff;border:0;border-radius:7px;padding:9px 12px;font-weight:900;cursor:pointer;min-width:94px}.mark.done{background:var(--green)}.profile{font-size:.78rem;color:#333;text-decoration:underline;text-underline-offset:3px}.empty{padding:25px;background:#fff;border:1px dashed var(--line);border-radius:10px;color:var(--muted);grid-column:1/-1}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.step{padding:22px;background:#fff;border:1px solid var(--line);border-radius:12px}.num{display:grid;place-items:center;background:var(--red);color:#fff;font-weight:900;width:34px;height:34px;border-radius:50%;margin-bottom:12px}.step h3{margin:0 0 6px}.step p{color:var(--muted);margin:0;font-size:.92rem}
-.values{display:grid;grid-template-columns:1fr 1fr;gap:14px}.value{padding:25px;border-radius:12px;background:#171717;color:#fff}.value.red{background:var(--red)}.value h3{font-size:1.45rem;margin:0 0 8px;letter-spacing:-.03em}.value p{margin:0;color:#f3f3f3}.value .emoji{font-size:1.8rem;margin-bottom:12px}
-footer{background:#111;color:#fff;padding:32px 0}footer p{color:#c8c8c8;font-size:.85rem;max-width:850px}footer .footline{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.small{font-size:.78rem;color:var(--muted)}.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#111;color:#fff;padding:11px 16px;border-radius:8px;box-shadow:0 4px 18px #0003;display:none;z-index:10;max-width:90%;text-align:center}
-@media(max-width:700px){.nav{align-items:flex-start}.navlinks{display:none}.stats{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:10px}.cards,.steps,.values{grid-template-columns:1fr}.person{grid-template-columns:1fr auto}.hero{padding:50px 0 48px}.stat{padding:15px}}
+:root{--ink:#141414;--paper:#f7f6f2;--red:#d92732;--muted:#686868;--line:#dedbd5;--green:#18794e}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.5}
+a{color:inherit}
+.wrap{width:min(1120px,92%);margin:auto}
+.top{background:#111;color:#fff;font-size:.82rem;padding:8px 0}
+.top .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+header{background:#fff;border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:17px 0}
+.brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:-.04em;text-decoration:none}
+.brandmark{display:grid;place-items:center;width:42px;height:42px;background:var(--red);color:#fff;border-radius:9px;font-size:1.3rem}
+.brand span:last-child{font-size:1.04rem;line-height:1.05}
+.navlinks{display:flex;gap:20px;align-items:center;font-size:.9rem;font-weight:700}
+.navlinks a{text-decoration:none}
+.hero{background:var(--red);color:#fff;padding:64px 0 56px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-100px;top:-130px;width:430px;height:430px;border:65px solid #ffffff17;border-radius:50%;pointer-events:none}
+.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.76rem;font-weight:900}
+.hero h1{font-size:clamp(2.6rem,7vw,5.8rem);line-height:.92;letter-spacing:-.065em;text-transform:uppercase;margin:18px 0;max-width:820px}
+.hero p{max-width:650px;font-size:1.13rem;color:#fff8f8}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.btn{display:inline-flex;justify-content:center;align-items:center;border:0;border-radius:7px;padding:12px 18px;font-weight:850;text-decoration:none;cursor:pointer;font-size:.95rem}
+.btn-white{background:#fff;color:#111}
+.btn-dark{background:#111;color:#fff}
+.btn:hover{filter:brightness(.94)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:-22px;position:relative;z-index:2}
+.stat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px;box-shadow:0 8px 25px #00000008}
+.stat strong{display:block;font-size:clamp(1.6rem,4vw,2.4rem);line-height:1.1;letter-spacing:-.05em}
+.stat span{font-size:.86rem;color:var(--muted)}
+.stat .label{font-size:.72rem;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:var(--red);margin-bottom:8px}
+section{padding:54px 0}
+.section-head{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:22px}
+.section-head h2{font-size:clamp(1.8rem,4vw,3rem);letter-spacing:-.05em;line-height:1;margin:0}
+.section-head p{max-width:470px;color:var(--muted);margin:0}
+.notice{background:#fff;border:1px solid var(--line);border-left:5px solid var(--red);padding:14px 16px;border-radius:8px;font-size:.9rem;margin:18px 0}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+.toolbar input,.toolbar select{font:inherit;border:1px solid #cfcac2;border-radius:8px;padding:12px 13px;background:#fff;min-width:190px}
+.toolbar input{flex:1}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.person{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center}
+.person h3{font-size:1.02rem;margin:0 0 3px}
+.person .role{font-size:.82rem;color:var(--muted)}
+.person .followers{font-size:.78rem;color:#4d4d4d;margin-top:6px}
+.person .actions{display:flex;align-items:center;gap:8px;flex-direction:column}
+.mark{background:var(--red);color:#fff;border:0;border-radius:7px;padding:9px 12px;font-weight:900;cursor:pointer;min-width:94px}
+.mark.done{background:var(--green)}
+.mark:disabled{opacity:.6;cursor:wait}
+.empty{padding:25px;background:#fff;border:1px dashed var(--line);border-radius:10px;color:var(--muted);grid-column:1/-1}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.step{padding:22px;background:#fff;border:1px solid var(--line);border-radius:12px}
+.num{display:grid;place-items:center;background:var(--red);color:#fff;font-weight:900;width:34px;height:34px;border-radius:50%;margin-bottom:12px}
+.step h3{margin:0 0 6px}
+.step p{color:var(--muted);margin:0;font-size:.92rem}
+.values{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.value{padding:25px;border-radius:12px;background:#171717;color:#fff}
+.value.red{background:var(--red)}
+.value h3{font-size:1.45rem;margin:0 0 8px}
+.value p{margin:0;color:#f3f3f3}
+.value .emoji{font-size:1.8rem;margin-bottom:12px}
+footer{background:#111;color:#fff;padding:32px 0}
+footer p{color:#c8c8c8;font-size:.85rem;max-width:850px}
+footer .footline{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.small{font-size:.78rem;color:var(--muted)}
+.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#111;color:#fff;padding:11px 16px;border-radius:8px;box-shadow:0 4px 18px #0003;display:none;z-index:10;max-width:90%;text-align:center}
+@media(max-width:700px){
+.nav{align-items:flex-start}.navlinks{display:none}
+.stats{grid-template-columns:1fr}
+.section-head{display:block}.section-head p{margin-top:10px}
+.cards,.steps,.values{grid-template-columns:1fr}
+.person{grid-template-columns:1fr auto}
+.hero{padding:50px 0 48px}.stat{padding:15px}
+}
 </style>
 </head>
 <body>
 <div class="top"><div class="wrap"><span>UNE CAMPAGNE DE CHOIX PERSONNEL</span><span>Respect • Responsabilité • Solidarité</span></div></div>
+
 <header><div class="wrap nav">
-  <a class="brand" href="#" aria-label="Accueil"><span class="brandmark">B</span><span>ON BLOQUE<br>L’EXTRÊME GAUCHE</span></a>
-  <nav class="navlinks"><a href="#comptes">Comptes</a><a href="#comment">Comment ça marche</a><a href="#engagements">Nos engagements</a></nav>
+<a class="brand" href="#" aria-label="Accueil"><span class="brandmark">B</span><span>ON BLOQUE<br>L’EXTRÊME GAUCHE</span></a>
+<nav class="navlinks"><a href="#comptes">Comptes</a><a href="#comment">Comment ça marche</a><a href="#engagements">Nos engagements</a></nav>
 </div></header>
+
 <main>
 <section class="hero"><div class="wrap">
-  <div class="eyebrow">Une démarche individuelle, un compteur collectif</div>
-  <h1>Choisis ce que<br>tu veux voir.</h1>
-  <p>Retrouve ici des personnalités politiques, médias et comptes publics associés à la gauche ou à l’extrême gauche. Si tu le souhaites, bloque-les directement sur les plateformes, puis marque ton action sur ce site.</p>
-  <div class="hero-actions"><a class="btn btn-white" href="#comptes">Voir les comptes ↓</a><a class="btn btn-dark" href="#engagements">Nos engagements</a></div>
+<div class="eyebrow">Une démarche individuelle, un compteur collectif</div>
+<h1>Choisis ce que<br>tu veux voir.</h1>
+<p>Retrouve ici des personnalités politiques, médias et comptes publics associés à la gauche ou à l’extrême gauche. Si tu le souhaites, bloque-les directement sur les plateformes, puis déclare ton action sur ce site.</p>
+<div class="hero-actions"><a class="btn btn-white" href="#comptes">Voir les comptes ↓</a><a class="btn btn-dark" href="#engagements">Nos engagements</a></div>
 </div></section>
+
 <div class="wrap stats">
-  <div class="stat"><div class="label">Déclarations sur cet appareil</div><strong id="localCount">0</strong><span>Comptes marqués « BLOQUÉ » ici</span></div>
-  <div class="stat"><div class="label">Compteur collectif</div><strong id="globalCount">À connecter</strong><span id="globalSub">Nécessite une base de données en ligne</span></div>
-  <div class="stat"><div class="label">Profils répertoriés</div><strong id="profileCount">0</strong><span>Profils publics dans cette liste</span></div>
+<div class="stat"><div class="label">Déclarations sur cet appareil</div><strong id="localCount">0</strong><span>Profils déclarés ici</span></div>
+<div class="stat"><div class="label">Compteur collectif</div><strong id="globalCount">Chargement…</strong><span id="globalSub">Connexion à la base de données</span></div>
+<div class="stat"><div class="label">Profils répertoriés</div><strong id="profileCount">0</strong><span>Profils publics dans cette liste</span></div>
 </div>
+
 <section id="comptes"><div class="wrap">
-  <div class="section-head"><div><div class="eyebrow" style="color:var(--red);margin-bottom:10px">Répertoire public</div><h2>Les comptes à retrouver</h2></div><p>Les boutons servent de pense-bête : ils ne bloquent pas automatiquement les comptes. Vérifie le profil et le réseau avant d’agir.</p></div>
-  <div class="notice"><strong>Transparence :</strong> les nombres d’abonnés ne sont pas affichés sans relevé fiable, daté et associé à un réseau précis. Les étiquettes politiques sont indicatives et peuvent être contestées.</div>
-  <div class="toolbar"><input id="search" type="search" placeholder="Rechercher un nom, un média…" aria-label="Rechercher"><select id="category" aria-label="Filtrer par catégorie"><option value="all">Toutes les catégories</option><option value="LFI">La France insoumise</option><option value="Gauche">Autres personnalités de gauche</option><option value="Media">Médias et journaux</option><option value="Militant">Militants et influenceurs</option></select></div>
-  <div class="cards" id="cards"></div>
-  <p class="small">Les profils et affiliations doivent être vérifiés avant publication. Le répertoire peut être complété avec des liens officiels vers les comptes publics.</p>
+<div class="section-head"><div><div class="eyebrow" style="color:var(--red);margin-bottom:10px">Répertoire public</div><h2>Les comptes à retrouver</h2></div><p>Les boutons servent à déclarer une action sur ce site. Ils ne bloquent pas automatiquement les comptes sur les réseaux sociaux.</p></div>
+<div class="notice"><strong>Transparence :</strong> les nombres d’abonnés ne sont pas affichés sans relevé fiable, daté et associé à un réseau précis. Les étiquettes politiques sont indicatives et peuvent être contestées.</div>
+<div class="toolbar">
+<input id="search" type="search" placeholder="Rechercher un nom, un média…" aria-label="Rechercher">
+<select id="category" aria-label="Filtrer par catégorie">
+<option value="all">Toutes les catégories</option><option value="LFI">La France insoumise</option><option value="Gauche">Autres personnalités de gauche</option><option value="Media">Médias et journaux</option><option value="Militant">Militants et influenceurs</option>
+</select>
+</div>
+<div class="cards" id="cards"></div>
+<p class="small">Les profils et affiliations doivent être vérifiés avant publication. Le répertoire peut être complété avec des liens officiels vers les comptes publics.</p>
 </div></section>
+
 <section id="comment" style="background:#eeece6"><div class="wrap">
-  <div class="section-head"><div><div class="eyebrow" style="color:var(--red);margin-bottom:10px">En trois étapes</div><h2>Comment ça marche ?</h2></div></div>
-  <div class="steps">
-    <div class="step"><div class="num">1</div><h3>Choisis un profil</h3><p>Vérifie son identité et retrouve son compte public sur le réseau social concerné.</p></div>
-    <div class="step"><div class="num">2</div><h3>Bloque sur le réseau</h3><p>Effectue toi-même le blocage dans l’application officielle. Ce site ne demande jamais tes identifiants.</p></div>
-    <div class="step"><div class="num">3</div><h3>Marque « BLOQUÉ »</h3><p>Indique que tu as réalisé l’action. Pour l’instant, le compteur partagé doit être configuré avant d’être disponible.</p></div>
-  </div>
-</div></section>
+<div class="section-head"><div><div class="eyebrow" style="color:var(--red);margin-bottom:10px">En trois étapes</div><h2>Comment ça marche ?</h2></div></div>
+<div class="steps">
+<div class="step"><div class="num">1</div><h3>Choisis un profil</h3><p>Vérifie son identité et retrouve son compte public sur le réseau social concerné.</p></div>
+<div class="step"><div class="num">2</div><h3>Bloque sur le réseau</h3><p>Effectue toi-même le blocage dans l’application officielle. Ce site ne demande jamais tes identifiants.</p></div>
+<div class="step"><div class="num">3</div><h3>Déclare ton action</h3><p>Le compteur collectif affiche les déclarations enregistrées sur ce site. Elles ne sont pas vérifiées par les plateformes.</p></div>
+</div></div></section>
+
 <section id="engagements"><div class="wrap">
-  <div class="section-head"><div><div class="eyebrow" style="color:var(--red);margin-bottom:10px">Nos engagements</div><h2>Des convictions, du respect.</h2></div><p>Le désaccord politique ne justifie ni la violence ni les menaces. La campagne appelle à une action numérique pacifique.</p></div>
-  <div class="values">
-    <div class="value"><div class="emoji">🚓 🚒</div><h3>Respect des forces publiques</h3><p>Nous affirmons notre respect envers les policiers, gendarmes, pompiers, soignants et l’ensemble des personnels qui interviennent pour protéger et secourir la population.</p></div>
-    <div class="value red"><div class="emoji">🏪 🤝</div><h3>Soutien aux commerçants</h3><p>Solidarité avec les commerçants, leurs salariés et les habitants touchés par les pillages, les dégradations et les violences. Les commerces de proximité font vivre nos quartiers.</p></div>
-  </div>
-</div></section>
+<div class="section-head"><div><div class="eyebrow" style="color:var(--red);margin-bottom:10px">Nos engagements</div><h2>Des convictions, du respect.</h2></div><p>Le désaccord politique ne justifie ni la violence ni les menaces. La campagne appelle à une action numérique pacifique.</p></div>
+<div class="values">
+<div class="value"><div class="emoji">🚓 🚒</div><h3>Respect des forces publiques</h3><p>Respect envers les policiers, gendarmes, pompiers, soignants et l’ensemble des personnels qui protègent et secourent la population.</p></div>
+<div class="value red"><div class="emoji">🏪 🤝</div><h3>Soutien aux commerçants</h3><p>Solidarité avec les commerçants, leurs salariés et les habitants touchés par les pillages, les dégradations et les violences.</p></div>
+</div></div></section>
 </main>
-<footer><div class="wrap footline"><div><strong>ON BLOQUE L’EXTRÊME GAUCHE</strong><p>Une initiative de blocage manuel et de déclaration volontaire. Ce site n’est affilié à aucun réseau social et ne bloque aucun compte à la place des visiteurs.</p></div><div class="small">Compteurs transparents • Respect de la vie privée</div></div></footer>
+
+<footer><div class="wrap footline"><div><strong>ON BLOQUE L’EXTRÊME GAUCHE</strong><p>Une initiative de déclaration volontaire. Ce site n’est affilié à aucun réseau social et ne bloque aucun compte à la place des visiteurs.</p></div><div class="small">Compteurs transparents • Respect de la vie privée</div></div></footer>
 <div class="toast" id="toast" role="status"></div>
+
 <script>
-const profiles = [
- {name:"Jean-Luc Mélenchon",role:"Fondateur de LFI, personnalité politique",cat:"LFI",followers:"À relever par réseau"},
- {name:"Manon Aubry",role:"Députée européenne, LFI",cat:"LFI",followers:"À relever par réseau"},
- {name:"Sébastien Delogu",role:"Député, LFI",cat:"LFI",followers:"À relever par réseau"},
- {name:"Mathilde Panot",role:"Députée, LFI",cat:"LFI",followers:"À relever par réseau"},
- {name:"Manuel Bompard",role:"Coordinateur de LFI, député",cat:"LFI",followers:"À relever par réseau"},
- {name:"Rima Hassan",role:"Députée européenne, LFI",cat:"LFI",followers:"À relever par réseau"},
- {name:"Clémence Guetté",role:"Députée, LFI",cat:"LFI",followers:"À relever par réseau"},
- {name:"Danièle Obono",role:"Députée, LFI",cat:"LFI",followers:"À relever par réseau"},
- {name:"Éric Coquerel",role:"Député, LFI",cat:"LFI",followers:"À relever par réseau"},
- {name:"Aurélie Trouvé",role:"Députée, LFI",cat:"LFI",followers:"À relever par réseau"},
- {name:"Ugo Bernalicis",role:"Député, LFI",cat:"LFI",followers:"À relever par réseau"},
- {name:"Thomas Portes",role:"Député, LFI",cat:"LFI",followers:"À relever par réseau"},
- {name:"François Ruffin",role:"Député, mouvement Debout!",cat:"Gauche",followers:"À relever par réseau"},
- {name:"Clémentine Autain",role:"Députée, mouvement L’Après",cat:"Gauche",followers:"À relever par réseau"},
- {name:"Olivier Besancenot",role:"Porte-parole du NPA",cat:"Gauche",followers:"À relever par réseau"},
- {name:"Philippe Poutou",role:"Ancien candidat du NPA",cat:"Gauche",followers:"À relever par réseau"},
- {name:"Fabien Roussel",role:"Secrétaire national du PCF",cat:"Gauche",followers:"À relever par réseau"},
- {name:"Marine Tondelier",role:"Secrétaire nationale des Écologistes",cat:"Gauche",followers:"À relever par réseau"},
- {name:"Olivier Faure",role:"Premier secrétaire du Parti socialiste",cat:"Gauche",followers:"À relever par réseau"},
- {name:"Libération",role:"Journal quotidien",cat:"Media",followers:"À relever par réseau"},
- {name:"L’Humanité",role:"Journal",cat:"Media",followers:"À relever par réseau"},
- {name:"Mediapart",role:"Média d’information",cat:"Media",followers:"À relever par réseau"},
- {name:"Politis",role:"Média d’information",cat:"Media",followers:"À relever par réseau"},
- {name:"Reporterre",role:"Média sur l’écologie",cat:"Media",followers:"À relever par réseau"},
- {name:"Blast",role:"Média indépendant",cat:"Media",followers:"À relever par réseau"},
- {name:"Le Média",role:"Média en ligne",cat:"Media",followers:"À relever par réseau"},
- {name:"Usul",role:"Vidéaste et commentateur politique",cat:"Militant",followers:"À relever par réseau"},
- {name:"François Bégaudeau",role:"Auteur et commentateur public",cat:"Militant",followers:"À relever par réseau"}
-];const SUPABASE_URL = "https://urhnamscxukdpmcyxypz.supabase.co";
+"use strict";
+
+/* Configuration Supabase */
+const SUPABASE_URL = "https://urhnamscxukdpmcyxypz.supabase.co";
 const SUPABASE_KEY = "sb_publishable_oFmlDRjzhbkiqD-fH2miXA_pFKM8OHZ";
-const storageKey="obeg_marked_v1";
+
+/* Répertoire des profils */
+const profiles = [
+{name:"Jean-Luc Mélenchon",role:"Fondateur de LFI, personnalité politique",cat:"LFI",followers:"À relever par réseau"},
+{name:"Manon Aubry",role:"Députée européenne, LFI",cat:"LFI",followers:"À relever par réseau"},
+{name:"Sébastien Delogu",role:"Député, LFI",cat:"LFI",followers:"À relever par réseau"},
+{name:"Mathilde Panot",role:"Députée, LFI",cat:"LFI",followers:"À relever par réseau"},
+{name:"Manuel Bompard",role:"Coordinateur de LFI, député",cat:"LFI",followers:"À relever par réseau"},
+{name:"Rima Hassan",role:"Députée européenne, LFI",cat:"LFI",followers:"À relever par réseau"},
+{name:"Clémence Guetté",role:"Députée, LFI",cat:"LFI",followers:"À relever par réseau"},
+{name:"Danièle Obono",role:"Députée, LFI",cat:"LFI",followers:"À relever par réseau"},
+{name:"Éric Coquerel",role:"Député, LFI",cat:"LFI",followers:"À relever par réseau"},
+{name:"Aurélie Trouvé",role:"Députée, LFI",cat:"LFI",followers:"À relever par réseau"},
+{name:"Ugo Bernalicis",role:"Député, LFI",cat:"LFI",followers:"À relever par réseau"},
+{name:"Thomas Portes",role:"Député, LFI",cat:"LFI",followers:"À relever par réseau"},
+{name:"François Ruffin",role:"Député, mouvement Debout!",cat:"Gauche",followers:"À relever par réseau"},
+{name:"Clémentine Autain",role:"Députée, mouvement L’Après",cat:"Gauche",followers:"À relever par réseau"},
+{name:"Olivier Besancenot",role:"Porte-parole du NPA",cat:"Gauche",followers:"À relever par réseau"},
+{name:"Philippe Poutou",role:"Ancien candidat du NPA",cat:"Gauche",followers:"À relever par réseau"},
+{name:"Fabien Roussel",role:"Secrétaire national du PCF",cat:"Gauche",followers:"À relever par réseau"},
+{name:"Marine Tondelier",role:"Secrétaire nationale des Écologistes",cat:"Gauche",followers:"À relever par réseau"},
+{name:"Olivier Faure",role:"Premier secrétaire du Parti socialiste",cat:"Gauche",followers:"À relever par réseau"},
+{name:"Libération",role:"Journal quotidien",cat:"Media",followers:"À relever par réseau"},
+{name:"L’Humanité",role:"Journal",cat:"Media",followers:"À relever par réseau"},
+{name:"Mediapart",role:"Média d’information",cat:"Media",followers:"À relever par réseau"},
+{name:"Politis",role:"Média d’information",cat:"Media",followers:"À relever par réseau"},
+{name:"Reporterre",role:"Média sur l’écologie",cat:"Media",followers:"À relever par réseau"},
+{name:"Blast",role:"Média indépendant",cat:"Media",followers:"À relever par réseau"},
+{name:"Le Média",role:"Média en ligne",cat:"Media",followers:"À relever par réseau"},
+{name:"Usul",role:"Vidéaste et commentateur politique",cat:"Militant",followers:"À relever par réseau"},
+{name:"François Bégaudeau",role:"Auteur et commentateur public",cat:"Militant",followers:"À relever par réseau"}
+];
+
+const storageKey = "obeg_marked_v1";
+const visitorIdKey = "obeg_visitor_id";
 let marked = new Set();
-try { marked = new Set(JSON.parse(localStorage.getItem(storageKey)||"[]")); } catch(e) {}
+
+try {
+  marked = new Set(JSON.parse(localStorage.getItem(storageKey) || "[]"));
+} catch (e) {}
+
 const cards = document.getElementById("cards");
-function render(){
- const q=document.getElementById("search").value.trim().toLocaleLowerCase("fr");
- const c=document.getElementById("category").value;
- const filtered=profiles.filter(p=>(c==="all"||p.cat===c)&&(p.name+" "+p.role).toLocaleLowerCase("fr").includes(q));
- cards.innerHTML="";
- if(!filtered.length){cards.innerHTML='<div class="empty">Aucun résultat. Essaie un autre nom ou une autre catégorie.</div>'}
- filtered.forEach(p=>{
-   const done=marked.has(p.name);
-   const el=document.createElement("article");el.className="person";
-   const info=document.createElement("div");
-   const h=document.createElement("h3");h.textContent=p.name;
-   const role=document.createElement("div");role.className="role";role.textContent=p.role;
-   const followers=document.createElement("div");followers.className="followers";followers.textContent="Abonnés : "+p.followers;
-   info.append(h,role,followers);
-   const actions=document.createElement("div");actions.className="actions";
-   const btn=document.createElement("button");btn.className="mark"+(done?" done":"");btn.textContent=done?"✓ BLOQUÉ":"BLOQUÉ";btn.setAttribute("aria-pressed",String(done));
-   btn.addEventListener("click", async () => {
-  if (marked.has(p.name)) {
-    showToast("Ce profil est déjà marqué comme bloqué sur cet appareil.");
-    return;
-  }
 
-  const visitorIdKey = "obeg_visitor_id";
-  let visitorId = localStorage.getItem(visitorIdKey);
+function showToast(message) {
+  const toast = document.getElementById("toast");
+  toast.textContent = message;
+  toast.style.display = "block";
+  clearTimeout(window.toastTimer);
+  window.toastTimer = setTimeout(() => {
+    toast.style.display = "none";
+  }, 3300);
+}
 
-  if (!visitorId) {
-    visitorId = crypto.randomUUID();
-    localStorage.setItem(visitorIdKey, visitorId);
-  }
-
-  btn.disabled = true;
-
-  try {
-    const response = await fetch(
-      `${SUPABASE_URL}/rest/v1/rpc/declarer_blocage`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "apikey": SUPABASE_KEY,
-          "Authorization": `Bearer ${SUPABASE_KEY}`
-        },
-        body: JSON.stringify({
-          p_profil_id: p.name,
-          p_visitor_id: visitorId
-        })
-      }
-    );
-
-    if (!response.ok) {
-      throw new Error("Échec de l'enregistrement");
+function getVisitorId() {
+  let id = localStorage.getItem(visitorIdKey);
+  if (!id) {
+    if (window.crypto && typeof window.crypto.randomUUID === "function") {
+      id = window.crypto.randomUUID();
+    } else {
+      id = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, c => {
+        const r = Math.random() * 16 | 0;
+        return (c === "x" ? r : (r & 3 | 8)).toString(16);
+      });
     }
-
-    marked.add(p.name);
-    localStorage.setItem(storageKey, JSON.stringify([...marked]));
-    render();
-    showToast("Déclaration enregistrée !");
-    await updateGlobalCount();
-  } catch (error) {
-    btn.disabled = false;
-    showToast("Impossible d'enregistrer. Vérifie la connexion.");
+    localStorage.setItem(visitorIdKey, id);
   }
-});
- document.getElementById("localCount").textContent=marked.size;
- document.getElementById("profileCount").textContent=profiles.length;
-}async function updateGlobalCount() {
+  return id;
+}
+
+/* Récupère le total global dans Supabase */
+async function updateGlobalCount() {
   const countElement = document.getElementById("globalCount");
   const subtitle = document.getElementById("globalSub");
 
@@ -182,21 +229,124 @@ function render(){
       }
     );
 
-    if (!response.ok) throw new Error("Compteur indisponible");
+    if (!response.ok) {
+      throw new Error(`Erreur HTTP ${response.status}`);
+    }
 
     const total = await response.json();
     countElement.textContent = Number(total).toLocaleString("fr-FR");
     subtitle.textContent = "Déclarations enregistrées sur le site";
   } catch (error) {
     countElement.textContent = "Indisponible";
-    subtitle.textContent = "Le compteur collectif n'a pas pu être chargé";
+    subtitle.textContent = "Connexion au compteur impossible";
+    console.error("Erreur compteur Supabase :", error);
   }
 }
 
-updateGlobalCount();
-function showToast(msg){const t=document.getElementById("toast");t.textContent=msg;t.style.display="block";clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>t.style.display="none",3300)}
-document.getElementById("search").addEventListener("input",render);
-document.getElementById("category").addEventListener("change",render);
+/* Enregistre une déclaration dans Supabase */
+async function declareBlock(profileName, button) {
+  if (marked.has(profileName)) {
+    showToast("Ce profil est déjà déclaré sur cet appareil.");
+    return;
+  }
+
+  button.disabled = true;
+
+  try {
+    const response = await fetch(
+      `${SUPABASE_URL}/rest/v1/rpc/declarer_blocage`,
+      {
+        method: "POST",
+        headers: {
+          "apikey": SUPABASE_KEY,
+          "Authorization": `Bearer ${SUPABASE_KEY}`,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          p_profil_id: profileName,
+          p_visitor_id: getVisitorId()
+        })
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error(`Erreur HTTP ${response.status}: ${await response.text()}`);
+    }
+
+    marked.add(profileName);
+
+    try {
+      localStorage.setItem(storageKey, JSON.stringify([...marked]));
+    } catch (e) {}
+
+    render();
+    showToast("Déclaration enregistrée sur le site.");
+    await updateGlobalCount();
+  } catch (error) {
+    button.disabled = false;
+    showToast("Échec de l'enregistrement. Réessaie plus tard.");
+    console.error("Erreur déclaration Supabase :", error);
+  }
+}
+
+/* Affiche les profils */
+function render() {
+  const q = document.getElementById("search").value.trim().toLocaleLowerCase("fr");
+  const category = document.getElementById("category").value;
+
+  const filtered = profiles.filter(p =>
+    (category === "all" || p.cat === category) &&
+    (p.name + " " + p.role).toLocaleLowerCase("fr").includes(q)
+  );
+
+  cards.innerHTML = "";
+
+  if (!filtered.length) {
+    cards.innerHTML = '<div class="empty">Aucun résultat. Essaie un autre nom ou une autre catégorie.</div>';
+  }
+
+  filtered.forEach(p => {
+    const done = marked.has(p.name);
+    const article = document.createElement("article");
+    article.className = "person";
+
+    const info = document.createElement("div");
+    const heading = document.createElement("h3");
+    heading.textContent = p.name;
+
+    const role = document.createElement("div");
+    role.className = "role";
+    role.textContent = p.role;
+
+    const followers = document.createElement("div");
+    followers.className = "followers";
+    followers.textContent = "Abonnés : " + p.followers;
+
+    info.append(heading, role, followers);
+
+    const actions = document.createElement("div");
+    actions.className = "actions";
+
+    const button = document.createElement("button");
+    button.className = "mark" + (done ? " done" : "");
+    button.textContent = done ? "✓ DÉCLARÉ" : "DÉCLARER";
+    button.setAttribute("aria-pressed", String(done));
+    button.addEventListener("click", () => declareBlock(p.name, button));
+
+    actions.append(button);
+    article.append(info, actions);
+    cards.append(article);
+  });
+
+  document.getElementById("localCount").textContent = marked.size.toLocaleString("fr-FR");
+  document.getElementById("profileCount").textContent = profiles.length.toLocaleString("fr-FR");
+}
+
+document.getElementById("search").addEventListener("input", render);
+document.getElementById("category").addEventListener("change", render);
+
 render();
+updateGlobalCount();
 </script>
-</body></html>
+</body>
+</html>
