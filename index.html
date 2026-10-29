@@ -93,7 +93,8 @@ const profiles = [
  {name:"Le Média",role:"Média en ligne",cat:"Media",followers:"À relever par réseau"},
  {name:"Usul",role:"Vidéaste et commentateur politique",cat:"Militant",followers:"À relever par réseau"},
  {name:"François Bégaudeau",role:"Auteur et commentateur public",cat:"Militant",followers:"À relever par réseau"}
-];
+];const SUPABASE_URL = "https://urhnamscxukdpmcyxypz.supabase.co";
+const SUPABASE_KEY = "sb_publishable_oFmlDRjzhbkiqD-fH2miXA_pFKM8OHZ";
 const storageKey="obeg_marked_v1";
 let marked = new Set();
 try { marked = new Set(JSON.parse(localStorage.getItem(storageKey)||"[]")); } catch(e) {}
@@ -114,13 +115,85 @@ function render(){
    info.append(h,role,followers);
    const actions=document.createElement("div");actions.className="actions";
    const btn=document.createElement("button");btn.className="mark"+(done?" done":"");btn.textContent=done?"✓ BLOQUÉ":"BLOQUÉ";btn.setAttribute("aria-pressed",String(done));
-   btn.addEventListener("click",()=>{if(marked.has(p.name))marked.delete(p.name);else marked.add(p.name);try{localStorage.setItem(storageKey,JSON.stringify([...marked]))}catch(e){}render();showToast(done?"Marquage retiré.":"Compte marqué comme bloqué. Pense à le bloquer directement sur le réseau.")});
-   actions.append(btn);
-   el.append(info,actions);cards.append(el);
- });
+   btn.addEventListener("click", async () => {
+  if (marked.has(p.name)) {
+    showToast("Ce profil est déjà marqué comme bloqué sur cet appareil.");
+    return;
+  }
+
+  const visitorIdKey = "obeg_visitor_id";
+  let visitorId = localStorage.getItem(visitorIdKey);
+
+  if (!visitorId) {
+    visitorId = crypto.randomUUID();
+    localStorage.setItem(visitorIdKey, visitorId);
+  }
+
+  btn.disabled = true;
+
+  try {
+    const response = await fetch(
+      `${SUPABASE_URL}/rest/v1/rpc/declarer_blocage`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "apikey": SUPABASE_KEY,
+          "Authorization": `Bearer ${SUPABASE_KEY}`
+        },
+        body: JSON.stringify({
+          p_profil_id: p.name,
+          p_visitor_id: visitorId
+        })
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error("Échec de l'enregistrement");
+    }
+
+    marked.add(p.name);
+    localStorage.setItem(storageKey, JSON.stringify([...marked]));
+    render();
+    showToast("Déclaration enregistrée !");
+    await updateGlobalCount();
+  } catch (error) {
+    btn.disabled = false;
+    showToast("Impossible d'enregistrer. Vérifie la connexion.");
+  }
+});
  document.getElementById("localCount").textContent=marked.size;
  document.getElementById("profileCount").textContent=profiles.length;
+}async function updateGlobalCount() {
+  const countElement = document.getElementById("globalCount");
+  const subtitle = document.getElementById("globalSub");
+
+  try {
+    const response = await fetch(
+      `${SUPABASE_URL}/rest/v1/rpc/compter_blocages`,
+      {
+        method: "POST",
+        headers: {
+          "apikey": SUPABASE_KEY,
+          "Authorization": `Bearer ${SUPABASE_KEY}`,
+          "Content-Type": "application/json"
+        },
+        body: "{}"
+      }
+    );
+
+    if (!response.ok) throw new Error("Compteur indisponible");
+
+    const total = await response.json();
+    countElement.textContent = Number(total).toLocaleString("fr-FR");
+    subtitle.textContent = "Déclarations enregistrées sur le site";
+  } catch (error) {
+    countElement.textContent = "Indisponible";
+    subtitle.textContent = "Le compteur collectif n'a pas pu être chargé";
+  }
 }
+
+updateGlobalCount();
 function showToast(msg){const t=document.getElementById("toast");t.textContent=msg;t.style.display="block";clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>t.style.display="none",3300)}
 document.getElementById("search").addEventListener("input",render);
 document.getElementById("category").addEventListener("change",render);
