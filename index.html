@@ -6,7 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Une campagne citoyenne de choix personnel sur les réseaux sociaux.">
 <title>On bloque l’extrême gauche | Campagne citoyenne</title>
-
 <style>
 :root{--ink:#141414;--paper:#f7f6f2;--red:#d92732;--muted:#686868;--line:#dedbd5;--green:#18794e}
 *{box-sizing:border-box}
@@ -50,7 +49,6 @@ section{padding:54px 0}
 .person{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center}
 .person h3{font-size:1.02rem;margin:0 0 3px}
 .person .role{font-size:.82rem;color:var(--muted)}
-.person .followers{font-size:.78rem;color:#4d4d4d;margin-top:6px}
 .person .actions{display:flex;align-items:center;gap:8px;flex-direction:column}
 .mark{background:var(--red);color:#fff;border:0;border-radius:7px;padding:9px 12px;font-weight:900;cursor:pointer;min-width:94px}
 .mark.done{background:var(--green)}
@@ -82,143 +80,57 @@ footer .footline{display:flex;justify-content:space-between;gap:20px;flex-wrap:w
 }
 </style>
 </head>
-
 <body>
-<div class="top">
-  <div class="wrap">
-    <span>UNE CAMPAGNE DE CHOIX PERSONNEL</span>
-    <span>Respect • Responsabilité • Solidarité</span>
-  </div>
-</div>
-
-<header>
-  <div class="wrap nav">
-    <a class="brand" href="#" aria-label="Accueil">
-      <span class="brandmark">B</span>
-      <span>ON BLOQUE<br>L’EXTRÊME GAUCHE</span>
-    </a>
-    <nav class="navlinks">
-      <a href="#comptes">Comptes</a>
-      <a href="#comment">Comment ça marche</a>
-      <a href="#engagements">Nos engagements</a>
-    </nav>
-  </div>
-</header>
-
+<div class="top"><div class="wrap"><span>UNE CAMPAGNE DE CHOIX PERSONNEL</span><span>Respect • Responsabilité • Solidarité</span></div></div>
+<header><div class="wrap nav">
+<a class="brand" href="#" aria-label="Accueil"><span class="brandmark">B</span><span>ON BLOQUE<br>L’EXTRÊME GAUCHE</span></a>
+<nav class="navlinks"><a href="#comptes">Comptes</a><a href="#comment">Comment ça marche</a><a href="#engagements">Nos engagements</a></nav>
+</div></header>
 <main>
-<section class="hero">
-  <div class="wrap">
-    <div class="eyebrow">Une démarche individuelle, un compteur collectif</div>
-    <h1>Choisis ce que<br>tu veux voir.</h1>
-    <p>Retrouve ici des personnalités politiques, médias et comptes publics associés à la gauche ou à l’extrême gauche. Si tu le souhaites, bloque-les directement sur les plateformes, puis déclare ton action sur ce site.</p>
-    <div class="hero-actions">
-      <a class="btn btn-white" href="#comptes">Voir les comptes ↓</a>
-      <a class="btn btn-dark" href="#engagements">Nos engagements</a>
-    </div>
-  </div>
-</section>
+<section class="hero"><div class="wrap">
+<div class="eyebrow">Une démarche individuelle, un compteur collectif</div>
+<h1>Choisis ce que<br>tu veux voir.</h1>
+<p>Retrouve ici des personnalités politiques, médias et comptes publics associés à la gauche ou à l’extrême gauche. Si tu le souhaites, bloque-les directement sur les plateformes, puis déclare ton action sur ce site.</p>
+<div class="hero-actions"><a class="btn btn-white" href="#comptes">Voir les comptes ↓</a><a class="btn btn-dark" href="#engagements">Nos engagements</a></div>
+</div></section>
 
 <div class="wrap stats">
-  <div class="stat">
-    <div class="label">Compteur collectif</div>
-    <strong id="globalCount">Chargement…</strong>
-    <span id="globalSub">Connexion à la base de données</span>
-  </div>
+<div class="stat">
+<div class="label">Compteur collectif</div>
+<strong id="globalCount">Chargement…</strong>
+<span id="globalSub">Connexion à la base de données</span>
+</div>
 </div>
 
-<section id="comptes">
-  <div class="wrap">
-    <div class="section-head">
-      <div>
-        <div class="eyebrow" style="color:var(--red);margin-bottom:10px">Répertoire public</div>
-        <h2>Les comptes à retrouver</h2>
-      </div>
-      <p>Les boutons servent à déclarer une action sur ce site. Ils ne bloquent pas automatiquement les comptes sur les réseaux sociaux.</p>
-    </div>
+<section id="comptes"><div class="wrap">
+<div class="section-head"><div><div class="eyebrow" style="color:var(--red);margin-bottom:10px">Répertoire public</div><h2>Les comptes à retrouver</h2></div><p>Les boutons servent à déclarer une action sur ce site. Ils ne bloquent pas automatiquement les comptes sur les réseaux sociaux.</p></div>
+<div class="notice"><strong>Transparence :</strong> les nombres d’abonnés ne sont pas affichés sans relevé fiable, daté et associé à un réseau précis. Les étiquettes politiques sont indicatives et peuvent être contestées.</div>
+<div class="toolbar">
+<input id="search" type="search" placeholder="Rechercher un nom, un média…" aria-label="Rechercher">
+<select id="category" aria-label="Filtrer par catégorie">
+<option value="all">Toutes les catégories</option><option value="LFI">La France insoumise</option><option value="Gauche">Autres personnalités de gauche</option><option value="Media">Médias et journaux</option><option value="Militant">Militants et influenceurs</option>
+</select>
+</div>
+<div class="cards" id="cards"></div>
+<p class="small">Les profils et affiliations doivent être vérifiés avant publication. Le répertoire peut être complété avec des liens officiels vers les comptes publics.</p>
+</div></section>
 
-    <div class="notice">
-      <strong>Transparence :</strong> les nombres d’abonnés ne sont pas affichés sans relevé fiable, daté et associé à un réseau précis. Les étiquettes politiques sont indicatives et peuvent être contestées.
-    </div>
+<section id="comment" style="background:#eeece6"><div class="wrap">
+<div class="section-head"><div><div class="eyebrow" style="color:var(--red);margin-bottom:10px">En trois étapes</div><h2>Comment ça marche ?</h2></div></div>
+<div class="steps">
+<div class="step"><div class="num">1</div><h3>Choisis un profil</h3><p>Vérifie son identité et retrouve son compte public sur le réseau social concerné.</p></div>
+<div class="step"><div class="num">2</div><h3>Bloque sur le réseau</h3><p>Effectue toi-même le blocage dans l’application officielle. Ce site ne demande jamais tes identifiants.</p></div>
+<div class="step"><div class="num">3</div><h3>Déclare ton action</h3><p>Le compteur collectif affiche les déclarations enregistrées sur ce site. Elles ne sont pas vérifiées par les plateformes.</p></div>
+</div></div></section>
 
-    <div class="toolbar">
-      <input id="search" type="search" placeholder="Rechercher un nom, un média…" aria-label="Rechercher">
-      <select id="category" aria-label="Filtrer par catégorie">
-        <option value="all">Toutes les catégories</option>
-        <option value="LFI">La France insoumise</option>
-        <option value="Gauche">Autres personnalités de gauche</option>
-        <option value="Media">Médias et journaux</option>
-        <option value="Militant">Militants et influenceurs</option>
-      </select>
-    </div>
-
-    <div class="cards" id="cards"></div>
-    <p class="small">Les profils et affiliations doivent être vérifiés avant publication. Le répertoire peut être complété avec des liens officiels vers les comptes publics.</p>
-  </div>
-</section>
-
-<section id="comment" style="background:#eeece6">
-  <div class="wrap">
-    <div class="section-head">
-      <div>
-        <div class="eyebrow" style="color:var(--red);margin-bottom:10px">En trois étapes</div>
-        <h2>Comment ça marche ?</h2>
-      </div>
-    </div>
-    <div class="steps">
-      <div class="step">
-        <div class="num">1</div>
-        <h3>Choisis un profil</h3>
-        <p>Vérifie son identité et retrouve son compte public sur le réseau social concerné.</p>
-      </div>
-      <div class="step">
-        <div class="num">2</div>
-        <h3>Bloque sur le réseau</h3>
-        <p>Effectue toi-même le blocage dans l’application officielle. Ce site ne demande jamais tes identifiants.</p>
-      </div>
-      <div class="step">
-        <div class="num">3</div>
-        <h3>Déclare ton action</h3>
-        <p>Le compteur collectif affiche les déclarations enregistrées sur ce site. Elles ne sont pas vérifiées par les plateformes.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="engagements">
-  <div class="wrap">
-    <div class="section-head">
-      <div>
-        <div class="eyebrow" style="color:var(--red);margin-bottom:10px">Nos engagements</div>
-        <h2>Des convictions, du respect.</h2>
-      </div>
-      <p>Le désaccord politique ne justifie ni la violence ni les menaces. La campagne appelle à une action numérique pacifique.</p>
-    </div>
-    <div class="values">
-      <div class="value">
-        <div class="emoji">🚓 🚒</div>
-        <h3>Respect des forces publiques</h3>
-        <p>Respect envers les policiers, gendarmes, pompiers, soignants et l’ensemble des personnels qui protègent et secourent la population.</p>
-      </div>
-      <div class="value red">
-        <div class="emoji">🏪 🤝</div>
-        <h3>Soutien aux commerçants</h3>
-        <p>Solidarité avec les commerçants, leurs salariés et les habitants touchés par les pillages, les dégradations et les violences.</p>
-      </div>
-    </div>
-  </div>
-</section>
+<section id="engagements"><div class="wrap">
+<div class="section-head"><div><div class="eyebrow" style="color:var(--red);margin-bottom:10px">Nos engagements</div><h2>Des convictions, du respect.</h2></div><p>Le désaccord politique ne justifie ni la violence ni les menaces. La campagne appelle à une action numérique pacifique.</p></div>
+<div class="values">
+<div class="value"><div class="emoji">🚓 🚒</div><h3>Respect des forces publiques</h3><p>Respect envers les policiers, gendarmes, pompiers, soignants et l’ensemble des personnels qui protègent et secourent la population.</p></div>
+<div class="value red"><div class="emoji">🏪 🤝</div><h3>Soutien aux commerçants</h3><p>Solidarité avec les commerçants, leurs salariés et les habitants touchés par les pillages, les dégradations et les violences.</p></div>
+</div></div></section>
 </main>
-
-<footer>
-  <div class="wrap footline">
-    <div>
-      <strong>ON BLOQUE L’EXTRÊME GAUCHE</strong>
-      <p>Une initiative de déclaration volontaire. Ce site n’est affilié à aucun réseau social et ne bloque aucun compte à la place des visiteurs.</p>
-    </div>
-    <div class="small">Compteurs transparents • Respect de la vie privée</div>
-  </div>
-</footer>
-
+<footer><div class="wrap footline"><div><strong>ON BLOQUE L’EXTRÊME GAUCHE</strong><p>Une initiative de déclaration volontaire. Ce site n’est affilié à aucun réseau social et ne bloque aucun compte à la place des visiteurs.</p></div><div class="small">Compteurs transparents • Respect de la vie privée</div></div></footer>
 <div class="toast" id="toast" role="status"></div>
 
 <script>
@@ -228,6 +140,7 @@ const SUPABASE_URL = "https://urhnamscxukdpmcyxypz.supabase.co";
 const SUPABASE_KEY = "sb_publishable_oFmlDRjzhbkiqD-fH2miXA_pFKM8OHZ";
 
 const profiles = [
+{name:"Bally Bagayoko",role:"Maire de Saint-Denis",cat:"LFI"},
 {name:"Jean-Luc Mélenchon",role:"Fondateur de LFI, personnalité politique",cat:"LFI"},
 {name:"Manon Aubry",role:"Députée européenne, LFI",cat:"LFI"},
 {name:"Sébastien Delogu",role:"Député, LFI",cat:"LFI"},
@@ -280,7 +193,6 @@ function showToast(message) {
 
 function getVisitorId() {
   let id = localStorage.getItem(visitorIdKey);
-
   if (!id) {
     if (window.crypto && typeof window.crypto.randomUUID === "function") {
       id = window.crypto.randomUUID();
@@ -295,7 +207,6 @@ function getVisitorId() {
   return id;
 }
 
-/* Lecture du compteur collectif */
 async function updateGlobalCount() {
   const countElement = document.getElementById("globalCount");
   const subtitle = document.getElementById("globalSub");
@@ -314,10 +225,7 @@ async function updateGlobalCount() {
       }
     );
 
-    if (!response.ok) {
-      const details = await response.text();
-      throw new Error(`HTTP ${response.status}: ${details}`);
-    }
+    if (!response.ok) throw new Error(`HTTP ${response.status}: ${await response.text()}`);
 
     const total = await response.json();
     countElement.textContent = Number(total).toLocaleString("fr-FR");
@@ -329,7 +237,6 @@ async function updateGlobalCount() {
   }
 }
 
-/* Enregistrement d'une déclaration */
 async function declareBlock(profileName, button) {
   if (marked.has(profileName)) {
     showToast("Ce profil est déjà déclaré sur cet appareil.");
@@ -354,13 +261,9 @@ async function declareBlock(profileName, button) {
       }
     );
 
-    if (!response.ok) {
-      const details = await response.text();
-      throw new Error(`HTTP ${response.status}: ${details}`);
-    }
+    if (!response.ok) throw new Error(`HTTP ${response.status}: ${await response.text()}`);
 
     marked.add(profileName);
-
     try {
       localStorage.setItem(storageKey, JSON.stringify([...marked]));
     } catch (e) {}
@@ -368,7 +271,6 @@ async function declareBlock(profileName, button) {
     render();
     showToast("Déclaration enregistrée.");
     await updateGlobalCount();
-
   } catch (error) {
     button.disabled = false;
     showToast("Échec de l'enregistrement. Réessaie plus tard.");
@@ -376,7 +278,6 @@ async function declareBlock(profileName, button) {
   }
 }
 
-/* Affichage des profils */
 function render() {
   const q = document.getElementById("search").value.trim().toLocaleLowerCase("fr");
   const category = document.getElementById("category").value;
